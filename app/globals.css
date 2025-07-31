@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  --color-neon-purple: #8a2be2;;
   --color-cyber-black: #121212;
   --color-electric-pink: #ff10f0;
   --color-matrix-green: #00ff7f;
