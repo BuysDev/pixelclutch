@@ -6,6 +6,7 @@ import { DropdownMenu } from "@radix-ui/react-dropdown-menu";
 import { BellDotIcon, Menu, User, X } from "lucide-react";
 import React from "react";
 import Sidebar from "./Sidebar";
+import { signOut } from "next-auth/react";
 
 export default function Header() {
     const [open, setOpen] = React.useState(false);
@@ -14,7 +15,7 @@ export default function Header() {
     }
     return (
         <>
-            <header className="h-20 flex items-center justify-between px-4 border-b border-gray-800">
+            <header className="h-20 flex sticky top-0 items-center justify-between px-4 border-b border-gray-800">
                 <div className="flex items-center space-x-4">
                     <div className="md:block hidden">
                         {
@@ -54,6 +55,15 @@ export default function Header() {
                             <User className="h-6 w-6" />
                         </DropdownMenuTrigger>
                         <DropdownMenuContent className="w-48">
+                            <DropdownMenuItem className="cursor-pointer">
+                                Perfil
+                            </DropdownMenuItem>
+                            <DropdownMenuItem className="cursor-pointer">
+                                Configurações
+                            </DropdownMenuItem>
+                            <DropdownMenuItem onClick={() => signOut} className="cursor-pointer">
+                                Sign Out
+                            </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
                 </div>
